@@ -6,7 +6,6 @@ import MenuLogo from '../../assets/menu.png';
 export const Container = styled.div`
   background-color: #09212a;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24);
-  min-height: 144px;
 `;
 
 export const Informations = styled.div`
