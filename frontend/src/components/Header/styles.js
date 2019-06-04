@@ -40,3 +40,22 @@ export const Menu = styled.div`
   margin-left: 16px;
   cursor: pointer;
 `;
+
+export const Schedule = styled.div`
+  padding-top: 25px;
+  padding-bottom: 25px;
+  ul {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 5px;
+    margin-right: 5px;
+
+    list-style: none;
+
+    li {
+      a {
+        font-size: ${props => (props.daily ? '40px' : '16px')};
+      }
+    }
+  }
+`;

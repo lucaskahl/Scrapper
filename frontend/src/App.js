@@ -8,7 +8,7 @@ import GlobalStyle from './styles/global';
 const App = () => (
   <>
     <GlobalStyle />
-    <Movie />
+    <Main />
   </>
 );
 
