@@ -54,7 +54,8 @@ export const Schedule = styled.div`
 
     li {
       a {
-        font-size: ${props => (props.daily ? '40px' : '16px')};
+        font-size: ${props => (props.daily ? '20px' : '16px')};
+        color: ${props => (props.daily ? '#fff' : '#666')};
       }
     }
   }
