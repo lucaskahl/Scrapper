@@ -47,16 +47,15 @@ export const Schedule = styled.div`
   ul {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     margin-left: 5px;
     margin-right: 5px;
 
     list-style: none;
-
-    li {
-      a {
-        font-size: ${props => (props.daily ? '20px' : '16px')};
-        color: ${props => (props.daily ? '#fff' : '#666')};
-      }
-    }
   }
+`;
+
+export const Week = styled.a`
+  font-size: ${props => (props.daily ? '20px' : '14px')};
+  color: ${props => (props.daily ? '#fff' : '#666')};
 `;

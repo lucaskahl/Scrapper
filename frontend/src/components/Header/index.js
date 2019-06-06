@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {
-  Container, Menu, Informations, Search, Schedule,
+  Container, Menu, Informations, Search, Schedule, Week,
 } from './styles';
 
 const Header = () => (
@@ -14,16 +14,16 @@ const Header = () => (
     <Schedule>
       <ul>
         <li>
-          <a daily>Today</a>
+          <Week daily>Today</Week>
         </li>
         <li>
-          <a>Thursday</a>
+          <Week>Thursday</Week>
         </li>
         <li>
-          <a>Friday</a>
+          <Week>Friday</Week>
         </li>
         <li>
-          <a>Saturday</a>
+          <Week>Saturday</Week>
         </li>
       </ul>
     </Schedule>
