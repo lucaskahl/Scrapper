@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import StarIcon from '../../assets/star.svg';
+
 export const Container = styled.div``;
 
 export const Trailer = styled.div`
@@ -43,3 +45,37 @@ export const TextInformation = styled.div`
     }
   }
 `;
+
+export const Rate = styled.div`
+  margin: 16px;
+
+  p {
+    margin-bottom: 8px;
+    color: #666;
+  }
+
+  div {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  ul {
+    display: flex;
+    li {
+      margin-right: 12px;
+      list-style: none;
+        span {
+          content: '';
+          display: block;
+          background-image: url(${StarIcon});
+          background-size: 12px;
+          width: 12px;
+          height: 12px;
+          fill: #000;
+        }
+      }
+    }
+  }
+`;
+
+export const ActualRate = styled.div``;

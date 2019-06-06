@@ -1,7 +1,13 @@
 import React from 'react';
 
 import {
-  Container, Trailer, MovieInfo, VisualInformation, TextInformation,
+  Container,
+  Trailer,
+  MovieInfo,
+  VisualInformation,
+  TextInformation,
+  Rate,
+  ActualRate,
 } from './styles';
 
 const Movie = () => (
@@ -27,6 +33,45 @@ const Movie = () => (
         </p>
       </TextInformation>
     </MovieInfo>
+
+    <Rate>
+      <p>Grade Now</p>
+      <div>
+        <ul>
+          <li>
+            <span />
+          </li>
+          <li>
+            <span />
+          </li>
+          <li>
+            <span />
+          </li>
+          <li>
+            <span />
+          </li>
+          <li>
+            <span />
+          </li>
+          <li>
+            <span />
+          </li>
+          <li>
+            <span />
+          </li>
+          <li>
+            <span />
+          </li>
+          <li>
+            <span />
+          </li>
+          <li>
+            <span />
+          </li>
+        </ul>
+        <ActualRate>8,1/10</ActualRate>
+      </div>
+    </Rate>
   </Container>
 );
 
