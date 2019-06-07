@@ -62,16 +62,13 @@ export const Rate = styled.div`
   ul {
     display: flex;
     li {
-      margin-right: 12px;
       list-style: none;
-        span {
-          content: '';
-          display: block;
-          background-image: url(${StarIcon});
-          background-size: 12px;
-          width: 12px;
-          height: 12px;
-          fill: #000;
+        svg {
+          width: 30px;
+          height: 20px;
+          path {
+            fill: #888;
+          }
         }
       }
     }
@@ -79,3 +76,12 @@ export const Rate = styled.div`
 `;
 
 export const ActualRate = styled.div``;
+
+export const Icon = styled.path`
+  cursor: pointer;
+  transition: fill 0.2s linear;
+
+  &:hover {
+    fill: #fff;
+  }
+`;
