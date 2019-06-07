@@ -76,12 +76,3 @@ export const Rate = styled.div`
 `;
 
 export const ActualRate = styled.div``;
-
-export const Icon = styled.path`
-  cursor: pointer;
-  transition: fill 0.2s linear;
-
-  &:hover {
-    fill: #fff;
-  }
-`;

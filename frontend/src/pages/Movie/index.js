@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
+
+import Stars from '../../components/Stars';
 
 import {
   Container,
@@ -8,142 +10,47 @@ import {
   TextInformation,
   Rate,
   ActualRate,
-  Icon,
 } from './styles';
 
-const Movie = () => (
-  <Container>
-    <Trailer>
-      <img src="http://lrmonline.com/inc/uploads/2018/10/Wonder-Woman-2.jpg" />
-    </Trailer>
-    <MovieInfo>
-      <VisualInformation>
-        <img
-          src="https://www.dhresource.com/0x0s/f2-albu-g8-M00-C6-A7-rBVaV1ycQS6AbBclAALBFfobGyM302.jpg/wonder-woman-decora-o-de-parede-art-silk.jpg"
-          alt="Wonder Woman poster"
-        />
-      </VisualInformation>
-      <TextInformation>
-        <h3>Wonder Woman</h3>
-        <p>PG-13 | 2h 21min | Action, Adventure, Fantasy</p>
-        <p>
-          <strong>Director:</strong> <span>Patty Jenkins</span>
-        </p>
-        <p>
-          <strong>Writter:</strong> <span>Allan Heinberg (screenplay), Zack Snyder (story by)</span>
-        </p>
-      </TextInformation>
-    </MovieInfo>
+export default class Movie extends Component {
+  state = {
+    a: 'b',
+  };
 
-    <Rate>
-      <p>Grade Now</p>
-      <div>
-        <ul>
-          <li>
-            <svg>
-              <Icon
-                d="m10.201,.758l2.478,5.865 6.344,.545c0.44,0.038 0.619,0.587 0.285,0.876l-4.812,4.169 1.442,6.202c0.1,0.431-0.367,0.77-0.745,0.541l-5.452-3.288-5.452,3.288c-0.379,0.228-0.845-0.111-0.745-0.541l1.442-6.202-4.813-4.17c-0.334-0.289-0.156-0.838 0.285-0.876l6.344-.545 2.478-5.864c0.172-0.408 0.749-0.408 0.921,0z"
-                data-original="#000000"
-                data-old_color="#E6E6E6"
-                fill="#F3F3F3"
-              />
-            </svg>
-          </li>
-          <li>
-            <svg>
-              <Icon
-                d="m10.201,.758l2.478,5.865 6.344,.545c0.44,0.038 0.619,0.587 0.285,0.876l-4.812,4.169 1.442,6.202c0.1,0.431-0.367,0.77-0.745,0.541l-5.452-3.288-5.452,3.288c-0.379,0.228-0.845-0.111-0.745-0.541l1.442-6.202-4.813-4.17c-0.334-0.289-0.156-0.838 0.285-0.876l6.344-.545 2.478-5.864c0.172-0.408 0.749-0.408 0.921,0z"
-                data-original="#000000"
-                data-old_color="#E6E6E6"
-                fill="#F3F3F3"
-              />
-            </svg>
-          </li>
-          <li>
-            <svg>
-              <Icon
-                d="m10.201,.758l2.478,5.865 6.344,.545c0.44,0.038 0.619,0.587 0.285,0.876l-4.812,4.169 1.442,6.202c0.1,0.431-0.367,0.77-0.745,0.541l-5.452-3.288-5.452,3.288c-0.379,0.228-0.845-0.111-0.745-0.541l1.442-6.202-4.813-4.17c-0.334-0.289-0.156-0.838 0.285-0.876l6.344-.545 2.478-5.864c0.172-0.408 0.749-0.408 0.921,0z"
-                data-original="#000000"
-                data-old_color="#E6E6E6"
-                fill="#F3F3F3"
-              />
-            </svg>
-          </li>
-          <li>
-            <svg>
-              <Icon
-                d="m10.201,.758l2.478,5.865 6.344,.545c0.44,0.038 0.619,0.587 0.285,0.876l-4.812,4.169 1.442,6.202c0.1,0.431-0.367,0.77-0.745,0.541l-5.452-3.288-5.452,3.288c-0.379,0.228-0.845-0.111-0.745-0.541l1.442-6.202-4.813-4.17c-0.334-0.289-0.156-0.838 0.285-0.876l6.344-.545 2.478-5.864c0.172-0.408 0.749-0.408 0.921,0z"
-                data-original="#000000"
-                data-old_color="#E6E6E6"
-                fill="#F3F3F3"
-              />
-            </svg>
-          </li>
-          <li>
-            <svg>
-              <Icon
-                d="m10.201,.758l2.478,5.865 6.344,.545c0.44,0.038 0.619,0.587 0.285,0.876l-4.812,4.169 1.442,6.202c0.1,0.431-0.367,0.77-0.745,0.541l-5.452-3.288-5.452,3.288c-0.379,0.228-0.845-0.111-0.745-0.541l1.442-6.202-4.813-4.17c-0.334-0.289-0.156-0.838 0.285-0.876l6.344-.545 2.478-5.864c0.172-0.408 0.749-0.408 0.921,0z"
-                data-original="#000000"
-                data-old_color="#E6E6E6"
-                fill="#F3F3F3"
-              />
-            </svg>
-          </li>
-          <li>
-            <svg>
-              <Icon
-                d="m10.201,.758l2.478,5.865 6.344,.545c0.44,0.038 0.619,0.587 0.285,0.876l-4.812,4.169 1.442,6.202c0.1,0.431-0.367,0.77-0.745,0.541l-5.452-3.288-5.452,3.288c-0.379,0.228-0.845-0.111-0.745-0.541l1.442-6.202-4.813-4.17c-0.334-0.289-0.156-0.838 0.285-0.876l6.344-.545 2.478-5.864c0.172-0.408 0.749-0.408 0.921,0z"
-                data-original="#000000"
-                data-old_color="#E6E6E6"
-                fill="#F3F3F3"
-              />
-            </svg>
-          </li>
-          <li>
-            <svg>
-              <Icon
-                d="m10.201,.758l2.478,5.865 6.344,.545c0.44,0.038 0.619,0.587 0.285,0.876l-4.812,4.169 1.442,6.202c0.1,0.431-0.367,0.77-0.745,0.541l-5.452-3.288-5.452,3.288c-0.379,0.228-0.845-0.111-0.745-0.541l1.442-6.202-4.813-4.17c-0.334-0.289-0.156-0.838 0.285-0.876l6.344-.545 2.478-5.864c0.172-0.408 0.749-0.408 0.921,0z"
-                data-original="#000000"
-                data-old_color="#E6E6E6"
-                fill="#F3F3F3"
-              />
-            </svg>
-          </li>
-          <li>
-            <svg>
-              <Icon
-                d="m10.201,.758l2.478,5.865 6.344,.545c0.44,0.038 0.619,0.587 0.285,0.876l-4.812,4.169 1.442,6.202c0.1,0.431-0.367,0.77-0.745,0.541l-5.452-3.288-5.452,3.288c-0.379,0.228-0.845-0.111-0.745-0.541l1.442-6.202-4.813-4.17c-0.334-0.289-0.156-0.838 0.285-0.876l6.344-.545 2.478-5.864c0.172-0.408 0.749-0.408 0.921,0z"
-                data-original="#000000"
-                data-old_color="#E6E6E6"
-                fill="#F3F3F3"
-              />
-            </svg>
-          </li>
-          <li>
-            <svg>
-              <Icon
-                d="m10.201,.758l2.478,5.865 6.344,.545c0.44,0.038 0.619,0.587 0.285,0.876l-4.812,4.169 1.442,6.202c0.1,0.431-0.367,0.77-0.745,0.541l-5.452-3.288-5.452,3.288c-0.379,0.228-0.845-0.111-0.745-0.541l1.442-6.202-4.813-4.17c-0.334-0.289-0.156-0.838 0.285-0.876l6.344-.545 2.478-5.864c0.172-0.408 0.749-0.408 0.921,0z"
-                data-original="#000000"
-                data-old_color="#E6E6E6"
-                fill="#F3F3F3"
-              />
-            </svg>
-          </li>
-          <li>
-            <svg>
-              <Icon
-                d="m10.201,.758l2.478,5.865 6.344,.545c0.44,0.038 0.619,0.587 0.285,0.876l-4.812,4.169 1.442,6.202c0.1,0.431-0.367,0.77-0.745,0.541l-5.452-3.288-5.452,3.288c-0.379,0.228-0.845-0.111-0.745-0.541l1.442-6.202-4.813-4.17c-0.334-0.289-0.156-0.838 0.285-0.876l6.344-.545 2.478-5.864c0.172-0.408 0.749-0.408 0.921,0z"
-                data-original="#000000"
-                data-old_color="#E6E6E6"
-                fill="#F3F3F3"
-              />
-            </svg>
-          </li>
-        </ul>
-        <ActualRate>8/10</ActualRate>
-      </div>
-    </Rate>
-  </Container>
-);
+  render() {
+    return (
+      <Container>
+        <Trailer>
+          <img src="http://lrmonline.com/inc/uploads/2018/10/Wonder-Woman-2.jpg" />
+        </Trailer>
+        <MovieInfo>
+          <VisualInformation>
+            <img
+              src="https://www.dhresource.com/0x0s/f2-albu-g8-M00-C6-A7-rBVaV1ycQS6AbBclAALBFfobGyM302.jpg/wonder-woman-decora-o-de-parede-art-silk.jpg"
+              alt="Wonder Woman poster"
+            />
+          </VisualInformation>
+          <TextInformation>
+            <h3>Wonder Woman</h3>
+            <p>PG-13 | 2h 21min | Action, Adventure, Fantasy</p>
+            <p>
+              <strong>Director:</strong> <span>Patty Jenkins</span>
+            </p>
+            <p>
+              <strong>Writter:</strong>{' '}
+              <span>Allan Heinberg (screenplay), Zack Snyder (story by)</span>
+            </p>
+          </TextInformation>
+        </MovieInfo>
 
-export default Movie;
+        <Rate>
+          <p>Grade Now</p>
+          <div>
+            <Stars />
+            <ActualRate>8/10</ActualRate>
+          </div>
+        </Rate>
+      </Container>
+    );
+  }
+}
