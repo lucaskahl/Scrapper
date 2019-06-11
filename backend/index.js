@@ -1,5 +1,7 @@
 const puppeteer = require("puppeteer");
 const CREDS = require("./cred");
+const fs = require("fs");
+const axios = require("axios");
 
 (async () => {
   try {
@@ -29,9 +31,34 @@ const CREDS = require("./cred");
       await page.click("a.md-button.md-ink-ripple");
     }, 3500);
 
+    await page.waitFor(1000);
     await page.waitForSelector(".yv-votd-image");
 
-    await page.waitForNavigation();
+    await page.waitFor(5000);
+
+    const images = await page.$$eval("img", i => i.map(l => l.src));
+    const image = images.filter(image => image.includes("amazon"))[0];
+    const imageLink = image.match(/[h]+[t]+[t]+[p]+[s]+[:]+[/]+[s]+[\s\S]+/)[0];
+
+    const download_image = (url, image_path) =>
+      axios({
+        url,
+        responseType: "stream"
+      }).then(
+        response =>
+          new Promise((resolve, reject) => {
+            response.data
+              .pipe(fs.createWriteStream(image_path))
+              .on("finish", () => resolve())
+              .on("error", e => reject(e));
+          })
+      );
+
+    (async () => {
+      let image = await download_image(imageLink, "images/example-1.png");
+    })();
+
+    await browser.close();
   } catch (e) {
     console.log("our error", e);
   }
