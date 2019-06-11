@@ -1,11 +1,12 @@
 const puppeteer = require("puppeteer");
-const CREDS = require("./cred");
 const fs = require("fs");
 const axios = require("axios");
 
+const CREDS = require("./cred");
+
 (async () => {
   try {
-    const browser = await puppeteer.launch({ headless: false });
+    const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
 
     page.setUserAgent(
@@ -55,7 +56,7 @@ const axios = require("axios");
       );
 
     (async () => {
-      let image = await download_image(imageLink, "images/example-1.png");
+      let image = await download_image(imageLink, `images/post.png`);
     })();
 
     await browser.close();
