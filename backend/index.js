@@ -1,6 +1,7 @@
 const puppeteer = require("puppeteer");
 const fs = require("fs");
 const axios = require("axios");
+const crypto = require("crypto");
 
 const CREDS = require("./cred");
 
@@ -41,6 +42,8 @@ const CREDS = require("./cred");
     const image = images.filter(image => image.includes("amazon"))[0];
     const imageLink = image.match(/[h]+[t]+[t]+[p]+[s]+[:]+[/]+[s]+[\s\S]+/)[0];
 
+    const token = crypto.randomBytes(8).toString("hex");
+
     const download_image = (url, image_path) =>
       axios({
         url,
@@ -56,7 +59,7 @@ const CREDS = require("./cred");
       );
 
     (async () => {
-      let image = await download_image(imageLink, `images/post.png`);
+      let image = await download_image(imageLink, `images/${token}.png`);
     })();
 
     await browser.close();
