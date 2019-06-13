@@ -4,7 +4,10 @@ const CREDS = require("./cred");
 
 (async () => {
   try {
-    const browser = await puppeteer.launch({ headless: false });
+    const browser = await puppeteer.launch({
+      headless: false,
+      ignoreHTTPSErrors: true
+    });
     const page = await browser.newPage();
 
     page.setUserAgent(
@@ -25,13 +28,12 @@ const CREDS = require("./cred");
 
     await page.goto("https://www.facebook.com/igrejadecristosp/?ref=bookmarks");
 
+    await page.waitFor(1000);
     await page.click("._3ixn");
 
     await page.waitForSelector("._2aha");
     await page.waitFor(3000);
-    await page.click("._2aha");
-    await page.waitFor(3000);
-    await page.click("table._3m20 > tbody > tr > td > div > a > div > input");
+    await page.click("ul._16vg._1oxv li:last-child > span > a");
 
     await page.waitForNavigation();
   } catch (e) {

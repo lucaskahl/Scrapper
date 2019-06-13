@@ -9,6 +9,7 @@ const CREDS = require("./cred");
   try {
     const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
+    console.log("Inicializado navegadores....");
 
     page.setUserAgent(
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
@@ -26,6 +27,8 @@ const CREDS = require("./cred");
     await page.keyboard.type(CREDS.password);
     await page.click(BUTTON_SELECTOR);
 
+    console.log("Autenticado com sucesso....");
+
     await page.waitForSelector(".moment");
     await page.click('.moment-bottom .md-menu a[title="Mais"]');
 
@@ -35,6 +38,8 @@ const CREDS = require("./cred");
 
     await page.waitFor(1000);
     await page.waitForSelector(".yv-votd-image");
+
+    console.log("Imagem selecionada com sucesso....");
 
     await page.waitFor(5000);
 
@@ -61,6 +66,7 @@ const CREDS = require("./cred");
     (async () => {
       let image = await download_image(imageLink, `images/${token}.png`);
     })();
+    console.log("Processo finalizado....");
 
     await browser.close();
   } catch (e) {
