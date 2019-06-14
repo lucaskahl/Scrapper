@@ -29,6 +29,7 @@ const CREDS = require("./cred");
 
     console.log("Autenticado com sucesso....");
 
+    await page.waitFor(1000);
     await page.waitForSelector(".moment");
     await page.click('.moment-bottom .md-menu a[title="Mais"]');
 
@@ -66,6 +67,64 @@ const CREDS = require("./cred");
     (async () => {
       let image = await download_image(imageLink, `images/${token}.png`);
     })();
+
+    (async () => {
+      try {
+        const browser = await puppeteer.launch({
+          headless: false,
+          ignoreHTTPSErrors: true
+        });
+        const page = await browser.newPage();
+
+        page.setUserAgent(
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+        );
+
+        await page.goto("https://www.facebook.com/login");
+
+        const EMAIL_SELECTOR = "input#email";
+        const PASSWORD_SELECTOR = "input#pass";
+        const BUTTON_SELECTOR = "button#loginbutton";
+
+        await page.click(EMAIL_SELECTOR);
+        await page.keyboard.type(CREDS.facebooklogin);
+        await page.click(PASSWORD_SELECTOR);
+        await page.keyboard.type(CREDS.facebookpass);
+        await page.click(BUTTON_SELECTOR);
+
+        await page.goto(
+          "https://www.facebook.com/igrejadecristosp/?ref=bookmarks"
+        );
+
+        await page.waitFor(1000);
+        await page.click("._3ixn");
+
+        await page.waitForSelector("._2aha");
+        await page.waitFor(3500);
+        await page.click("ul._16vg._1oxv li:last-child > span > a");
+
+        await page.click("div#js_1d > a");
+        await page.waitFor(1000);
+
+        const input = await page.$(
+          'div table > tbody > tr > td div._3jk > input[type="file"]'
+        );
+        await input.uploadFile(`./images/${token}.png`);
+        console.log("Fazendo upload de foto...");
+        await page.waitFor(10000);
+
+        await page.click('button[data-testid="react-composer-post-button"]');
+
+        await page.waitFor(10000);
+
+        console.log("Upload completo");
+
+        await browser.close();
+      } catch (e) {
+        console.log("our error", e);
+      }
+    })();
+
     console.log("Processo finalizado....");
 
     await browser.close();
