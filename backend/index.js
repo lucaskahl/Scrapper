@@ -71,7 +71,7 @@ const CREDS = require("./cred");
     (async () => {
       try {
         const browser = await puppeteer.launch({
-          headless: false,
+          headless: true,
           ignoreHTTPSErrors: true
         });
         const page = await browser.newPage();
